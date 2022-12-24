@@ -1,3 +1,13 @@
+import Head from 'next/head'
+import { Header } from '~/components/organisms/Header'
+
 export const Home = () => {
-  return <h1>Hello</h1>
+  return (
+    <>
+      <Head>
+        <title>Watch sales website</title>
+      </Head>
+      <Header />
+    </>
+  )
 }
