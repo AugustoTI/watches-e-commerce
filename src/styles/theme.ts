@@ -11,21 +11,25 @@ export const theme = {
     borderColor: 'hsl(0, 0%, 94%)',
   },
   font: {
-    families: {
-      primary: "'Roboto', sans-serif",
-    },
     sizes: {
-      biggestFontSize: '3.2rem',
-      h1FontSize: '2.4rem',
-      h2FontSize: '2rem',
-      h3FontSize: '1.6rem',
-      normalFontSize: '1.5rem',
-      smallFontSize: '1.3rem',
-      smallerFontSize: '1.248rem',
-    },
-    weight: {
-      medium: 500,
-      bold: 700,
+      mobile: {
+        biggestFontSize: '3.2rem',
+        h1FontSize: '2.4rem',
+        h2FontSize: '2rem',
+        h3FontSize: '1.6rem',
+        normalFontSize: '1.5rem',
+        smallFontSize: '1.3rem',
+        smallerFontSize: '1.248rem',
+      },
+      desktop: {
+        biggestFontSize: '4rem',
+        h1FontSize: '3.6rem',
+        h2FontSize: '2.4rem',
+        h3FontSize: '2rem',
+        normalFontSize: '1.6rem',
+        smallFontSize: '1.4rem',
+        smallerFontSize: '1.3rem',
+      },
     },
   },
   spacings: {
