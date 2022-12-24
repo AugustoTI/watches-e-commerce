@@ -1,11 +1,8 @@
 import type { NextPage } from 'next'
+import { Home } from '~/templates/Home'
 
-const Home: NextPage = () => {
-  return (
-    <>
-      <h1>Your Content</h1>
-    </>
-  )
+const HomePage: NextPage = () => {
+  return <Home />
 }
 
-export default Home
+export default HomePage

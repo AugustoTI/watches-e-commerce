@@ -16,7 +16,11 @@
     "incremental": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
-    "paths": {},
+    "paths": {
+      "~/components/*": ["src/components/*"],
+      "~/templates/*": ["src/templates/*"],
+      "~/styles/*": ["src/styles/*"]
+    },
     "noFallthroughCasesInSwitch": false
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
