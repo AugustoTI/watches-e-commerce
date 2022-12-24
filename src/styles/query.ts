@@ -1,16 +1,22 @@
-import { css, SerializedStyles } from '@emotion/react'
+import { css, FlattenSimpleInterpolation } from 'styled-components'
 
-export const minQuery = (mediaQuery: string, styles: SerializedStyles) => {
+export const minQuery = (
+  mediaQuery: number,
+  styles: FlattenSimpleInterpolation,
+) => {
   return css`
-    @media (min-width: ${mediaQuery}) {
+    @media screen and (min-width: ${mediaQuery}px) {
       ${styles}
     }
   `
 }
 
-export const maxQuery = (mediaQuery: string, styles: SerializedStyles) => {
+export const maxQuery = (
+  mediaQuery: number,
+  styles: FlattenSimpleInterpolation,
+) => {
   return css`
-    @media (max-width: ${mediaQuery}) {
+    @media screen and (max-width: ${mediaQuery}px) {
       ${styles}
     }
   `

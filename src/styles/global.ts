@@ -1,5 +1,5 @@
-import { css, Theme } from '@emotion/react'
 import { Roboto } from '@next/font/google'
+import { createGlobalStyle, css } from 'styled-components'
 import { minQuery } from './query'
 
 const robotoFont = Roboto({
@@ -8,119 +8,121 @@ const robotoFont = Roboto({
   display: 'swap',
 })
 
-export const globalStyle = ({
-  colors,
-  font: { sizes },
-  spacings,
-}: Theme) => css`
-  /*=============== BASE ===============*/
+export const GlobalStyles = createGlobalStyle`
+  ${({
+    theme: {
+      colors,
+      spacings,
+      font: { sizes },
+    },
+  }) => css`
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+    html {
+      font-size: 62.5%;
+      scroll-behavior: smooth;
+    }
 
-  html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-  }
+    body,
+    button,
+    input {
+      font-family: ${robotoFont.style.fontFamily};
+      font-size: ${sizes.mobile.normalFontSize};
+    }
 
-  body,
-  button,
-  input {
-    font-family: ${robotoFont.style.fontFamily};
-    font-size: ${sizes.mobile.normalFontSize};
-  }
+    body {
+      background: ${colors.bodyColor};
+      color: ${colors.textColor};
+      /* For animation dark mode */
+      transition: 0.4s;
+    }
 
-  body {
-    background: ${colors.bodyColor};
-    color: ${colors.textColor};
-    /* For animation dark mode */
-    transition: 0.4s;
-  }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-  img {
-    display: block;
-    max-width: 100%;
-  }
+    button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
 
-  button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-  }
+    ul {
+      list-style: none;
+    }
 
-  ul {
-    list-style: none;
-  }
+    a {
+      text-decoration: none;
+    }
 
-  a {
-    text-decoration: none;
-  }
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: ${colors.titleColor};
+      font-weight: 500;
+    }
 
-  h1,
-  h2,
-  h3,
-  h4 {
-    color: ${colors.titleColor};
-    font-weight: 500;
-  }
+    /*=============== REUSABLE CSS CLASSES ===============*/
 
-  /*=============== REUSABLE CSS CLASSES ===============*/
+    .container {
+      max-width: 102.4rem;
+      margin-left: ${spacings['2.4']};
+      margin-right: ${spacings['2.4']};
+    }
 
-  .container {
-    max-width: 102.4rem;
-    margin-left: ${spacings['2.4']};
-    margin-right: ${spacings['2.4']};
-  }
+    .grid {
+      display: grid;
+    }
 
-  .grid {
-    display: grid;
-  }
+    .main {
+      overflow: hidden;
+    }
 
-  .main {
-    overflow: hidden;
-  }
+    .section {
+      padding: 10.4rem 0 1.6rem;
+    }
 
-  .section {
-    padding: 10.4rem 0 1.6rem;
-  }
+    .section_title {
+      position: relative;
+      font-size: ${sizes.mobile.h3FontSize};
+      margin-bottom: ${spacings['4.8']};
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+    }
 
-  .section_title {
-    position: relative;
-    font-size: ${sizes.mobile.h3FontSize};
-    margin-bottom: ${spacings['4.8']};
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-  }
+    .section_title::before {
+      content: '';
+      position: absolute;
+      top: -1.6rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 67px;
+      height: 1px;
+      background-color: ${colors.firstColor};
+    }
 
-  .section_title::before {
-    content: '';
-    position: absolute;
-    top: -1.6rem;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 67px;
-    height: 1px;
-    background-color: ${colors.firstColor};
-  }
+    /*=============== RESPONSIVE TYPOGRAPHY ===============*/
+    ${minQuery(
+      968,
+      css`
+        body,
+        button,
+        input {
+          font-size: ${sizes.desktop.normalFontSize};
+        }
 
-  /*=============== RESPONSIVE TYPOGRAPHY ===============*/
-  ${minQuery(
-    '968px',
-    css`
-      body,
-      button,
-      input {
-        font-size: ${sizes.desktop.normalFontSize};
-      }
-
-      .section_title {
-        font-size: ${sizes.desktop.h3FontSize};
-      }
-    `,
-  )}
+        .section_title {
+          font-size: ${sizes.desktop.h3FontSize};
+        }
+      `,
+    )}
+  `}
 `
