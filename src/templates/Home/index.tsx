@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Header } from '~/components/organisms/Header'
+import { Header } from '~/components/Header'
 
 export const Home = () => {
   return (
