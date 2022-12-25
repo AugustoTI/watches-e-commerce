@@ -41,11 +41,6 @@ export const GlobalStyles = createGlobalStyle`
       transition: 0.4s;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
     button {
       cursor: pointer;
       border: none;
@@ -69,7 +64,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     /*=============== REUSABLE CSS CLASSES ===============*/
-
     .container {
       max-width: 102.4rem;
       margin-left: ${spacings['2.4']};
@@ -95,18 +89,44 @@ export const GlobalStyles = createGlobalStyle`
       text-transform: uppercase;
       letter-spacing: 2px;
       text-align: center;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -1.6rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 67px;
+        height: 1px;
+        background-color: ${colors.firstColor};
+      }
     }
 
-    .section_title::before {
-      content: '';
-      position: absolute;
-      top: -1.6rem;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      width: 67px;
-      height: 1px;
-      background-color: ${colors.firstColor};
+    .button {
+      display: inline-block;
+      padding: 2rem 3.2rem;
+      background: ${colors.buttonColor};
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+
+      &:hover {
+        background: ${colors.buttonColorAlt};
+      }
+
+      &.button-small {
+        padding: 1.6rem 2.4rem;
+      }
+
+      &.button-gray {
+        background: hsl(0, 0%, 75%);
+        color: ${colors.titleColor};
+
+        &:hover {
+          background: hsl(0, 0%, 63%);
+        }
+      }
     }
 
     /*=============== RESPONSIVE TYPOGRAPHY ===============*/
@@ -123,6 +143,6 @@ export const GlobalStyles = createGlobalStyle`
           font-size: ${sizes.desktop.h3FontSize};
         }
       `,
-    )}
+    )};
   `}
 `
