@@ -48,3 +48,10 @@ export const Button = styled.button`
     box-shadow: 0 12px 24px hsla(0, 0%, 10%, 0.2);
   `}
 `
+
+export const ContainerButtons = styled.div`
+  ${() => css`
+    display: flex;
+    align-items: center;
+  `}
+`

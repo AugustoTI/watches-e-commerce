@@ -6,14 +6,20 @@ import {
 } from './NavButtons/styles'
 import { NavButtonClose } from './NavMenu/styles'
 
-export const Container = styled.header`
-  ${({ theme: { zIndex } }) => css`
+interface HeaderStyleProps {
+  backgroundActive: boolean
+}
+
+export const Container = styled.header<HeaderStyleProps>`
+  ${({ theme: { zIndex, colors }, backgroundActive }) => css`
     width: 100%;
-    background: transparent;
+    background: ${backgroundActive ? colors.bodyColor : 'transparent'};
+    box-shadow: ${backgroundActive && '0 1px 4px hsla(0,4%,15%,0.1)'};
     position: fixed;
     top: 0;
     left: 0;
     z-index: ${zIndex.fixed};
+    transition: 0.2s;
   `}
 `
 

@@ -12,12 +12,12 @@ export const MainData = () => {
       </S.Description>
       <S.Price>$1245</S.Price>
 
-      <div className="home_buttons">
+      <S.ContainerButtons className="home_buttons">
         <a href="#" className="button button-gray button-small">
           Discover
         </a>
         <S.Button className="button home_button">ADD TO CART</S.Button>
-      </div>
+      </S.ContainerButtons>
     </S.Container>
   )
 }
