@@ -7,6 +7,7 @@ export const Home = () => {
     <>
       <Head>
         <title>Watch sales website</title>
+        <meta name="description" content="Website selling imported watches" />
       </Head>
       <Header />
       <main>

@@ -10,7 +10,10 @@ export const NavMenu = () => {
   return (
     <S.Container isOpen={isOpen}>
       <NavList />
-      <S.NavButtonClose onClick={() => handleClickMenu(false)}>
+      <S.NavButtonClose
+        aria-label="Close Menu"
+        onClick={() => handleClickMenu(false)}
+      >
         <BiX />
       </S.NavButtonClose>
     </S.Container>

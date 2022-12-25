@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styled, { css } from 'styled-components'
 
 export const Container = styled.section`
@@ -23,12 +22,12 @@ export const ImageHomeBG = styled.div`
     align-items: flex-end;
     justify-self: flex-end;
     transform: translateX(2.4rem);
-  `}
-`
 
-export const ImageHome = styled(Image)`
-  max-width: 100%;
-  width: 24rem;
-  height: auto;
-  display: block;
+    .image_home {
+      max-width: 100%;
+      width: 24rem;
+      height: auto;
+      display: block;
+    }
+  `}
 `
