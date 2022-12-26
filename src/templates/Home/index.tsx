@@ -1,3 +1,14 @@
+import Head from 'next/head'
+import { Header } from '~/components/Header'
+
 export const Home = () => {
-  return <h1>Hello</h1>
+  return (
+    <>
+      <Head>
+        <title>Watch sales website</title>
+        <meta name="description" content="Website selling imported watches" />
+      </Head>
+      <Header />
+    </>
+  )
 }
