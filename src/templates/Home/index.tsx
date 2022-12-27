@@ -10,7 +10,7 @@ export const Home = () => {
         <meta name="description" content="Website selling imported watches" />
       </Head>
       <Header />
-      <main>
+      <main className="main">
         <Main />
       </main>
     </>
