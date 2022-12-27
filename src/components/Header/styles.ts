@@ -5,6 +5,7 @@ import {
   NavToggleIconContainer,
 } from './NavButtons/styles'
 import { NavButtonClose } from './NavMenu/styles'
+import { minQuery } from '~/styles/query'
 
 interface HeaderStyleProps {
   backgroundActive: boolean
@@ -36,5 +37,19 @@ export const NavBar = styled.div`
     ${NavShopIconContainer} {
       color: ${colors.titleColor};
     }
+
+    ${minQuery(
+      768,
+      css`
+        height: calc(${spacings.headerHeight} + 2.4rem);
+        justify-content: initial;
+        column-gap: 4.8rem;
+
+        ${NavToggleIconContainer},
+        ${NavButtonClose} {
+          display: none;
+        }
+      `,
+    )}
   `}
 `

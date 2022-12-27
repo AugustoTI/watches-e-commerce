@@ -9,7 +9,7 @@ export const Header = () => {
 
   useEffect(() => {
     const scrollHeader = () => {
-      if (scrollY >= 50) {
+      if (window.scrollY >= 50) {
         setBackgroundActive(true)
       } else {
         setBackgroundActive(false)

@@ -7,11 +7,15 @@ export const NavButtons = () => {
 
   return (
     <S.Container>
-      <S.NavShopIconContainer aria-label="View Card">
+      <S.NavShopIconContainer
+        aria-label="Open shopping cart"
+        title="Open shopping cart"
+      >
         <BiShoppingBag />
       </S.NavShopIconContainer>
       <S.NavToggleIconContainer
-        aria-label="Open Menu"
+        aria-label="Open menu mobile"
+        title="Open menu mobile"
         onClick={() => handleClickMenu(true)}
       >
         <BiGridAlt />

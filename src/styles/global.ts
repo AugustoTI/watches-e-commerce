@@ -1,6 +1,6 @@
 import { Roboto } from '@next/font/google'
 import { createGlobalStyle, css } from 'styled-components'
-import { minQuery } from './query'
+import { maxQuery, minQuery } from './query'
 
 const robotoFont = Roboto({
   subsets: ['latin'],
@@ -68,6 +68,22 @@ export const GlobalStyles = createGlobalStyle`
       max-width: 102.4rem;
       margin-left: ${spacings['2.4']};
       margin-right: ${spacings['2.4']};
+
+      ${maxQuery(
+        320,
+        css`
+          margin-left: ${spacings['1.6']};
+          margin-right: ${spacings['1.6']};
+        `,
+      )}
+
+      ${minQuery(
+        1024,
+        css`
+          margin-left: auto;
+          margin-right: auto;
+        `,
+      )};
     }
 
     .grid {

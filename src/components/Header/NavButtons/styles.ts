@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { minQuery } from '~/styles/query'
 
 export const Container = styled.div`
   ${() => css`
@@ -10,6 +11,13 @@ export const Container = styled.div`
       font-size: 2rem;
       cursor: pointer;
     }
+
+    ${minQuery(
+      768,
+      css`
+        margin-left: auto;
+      `,
+    )}
   `}
 `
 

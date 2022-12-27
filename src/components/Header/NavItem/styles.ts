@@ -15,9 +15,17 @@ export const Container = styled.li`
       }
 
       ${minQuery(
+        768,
+        css`
+          text-transform: initial;
+          font-size: ${font.sizes.mobile.normalFontSize};
+        `,
+      )}
+
+      ${minQuery(
         968,
         css`
-          font-size: ${font.sizes.desktop.h2FontSize};
+          font-size: ${font.sizes.desktop.normalFontSize};
         `,
       )}
     }
