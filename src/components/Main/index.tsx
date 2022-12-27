@@ -5,8 +5,8 @@ import * as S from './styles'
 
 export const Main = () => {
   return (
-    <S.Container id="home">
-      <S.Content className="container grid">
+    <section id="home">
+      <S.Container className="container grid">
         <S.ImageHomeBG>
           <Image
             src="/home.webp"
@@ -21,7 +21,7 @@ export const Main = () => {
         <MainSocial />
 
         <MainData />
-      </S.Content>
-    </S.Container>
+      </S.Container>
+    </section>
   )
 }

@@ -1,15 +1,36 @@
 import styled, { css } from 'styled-components'
-import { minQuery } from '~/styles/query'
+import { maxQuery, minQuery } from '~/styles/query'
 
 export const Container = styled.div`
-  ${() => css``}
+  ${() => css`
+    ${minQuery(
+      767,
+      css`
+        padding: 0 0 4.8rem 9.6rem;
+      `,
+    )}
+
+    ${minQuery(
+      992,
+      css`
+        padding: 0 0 12.8rem 9.6rem;
+      `,
+    )}
+  `}
 `
 
 export const Title = styled.h1`
   ${({ theme: { font, spacings } }) => css`
-    font-weight: 700;
     font-size: ${font.sizes.mobile.biggestFontSize};
+    font-weight: 700;
     margin-bottom: ${spacings['1.6']};
+
+    ${maxQuery(
+      320,
+      css`
+        font-size: ${font.sizes.mobile.h1FontSize};
+      `,
+    )}
 
     ${minQuery(
       968,
@@ -44,8 +65,15 @@ export const Price = styled.span`
 `
 
 export const Button = styled.button`
-  ${() => css`
+  ${({ theme: { font } }) => css`
     box-shadow: 0 12px 24px hsla(0, 0%, 10%, 0.2);
+
+    ${maxQuery(
+      320,
+      css`
+        font-size: ${font.sizes.mobile.smallerFontSize};
+      `,
+    )}
   `}
 `
 

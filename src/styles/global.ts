@@ -63,6 +63,15 @@ export const GlobalStyles = createGlobalStyle`
       font-weight: 500;
     }
 
+    ::-webkit-scrollbar {
+      width: 0.96rem;
+      background: hsl(0, 0%, 74%);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: hsl(0, 0%, 17%);
+    }
+
     /*=============== REUSABLE CSS CLASSES ===============*/
     .container {
       max-width: 102.4rem;

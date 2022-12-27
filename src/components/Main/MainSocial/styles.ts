@@ -21,11 +21,26 @@ export const Container = styled.div`
     }
 
     ${minQuery(
+      767,
+      css`
+        top: 47%;
+        column-gap: 3.2rem;
+      `,
+    )}
+
+    ${minQuery(
       968,
       css`
         a {
           font-size: ${font.sizes.desktop.smallerFontSize};
         }
+      `,
+    )}
+
+    ${minQuery(
+      992,
+      css`
+        left: -9.6rem;
       `,
     )}
   `}
