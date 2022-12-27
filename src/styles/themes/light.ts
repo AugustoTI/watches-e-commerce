@@ -1,4 +1,4 @@
-export const theme = {
+export const light = {
   colors: {
     firstColor: 'hsl(31, 100%, 70%)',
     buttonColor: 'hsl(0, 0%, 17%)',

@@ -8,13 +8,18 @@ const robotoFont = Roboto({
   display: 'swap',
 })
 
-export const GlobalStyles = createGlobalStyle`
+interface GlobalStylesProps {
+  darkMode: boolean
+}
+
+export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   ${({
     theme: {
       colors,
       spacings,
       font: { sizes },
     },
+    darkMode,
   }) => css`
     * {
       margin: 0;
@@ -65,7 +70,7 @@ export const GlobalStyles = createGlobalStyle`
 
     ::-webkit-scrollbar {
       width: 0.96rem;
-      background: hsl(0, 0%, 74%);
+      background: ${darkMode ? 'hsl(0, 0%, 30%)' : 'hsl(0, 0%, 74%)'};
     }
 
     ::-webkit-scrollbar-thumb {
@@ -145,7 +150,7 @@ export const GlobalStyles = createGlobalStyle`
       }
 
       &.button-gray {
-        background: hsl(0, 0%, 75%);
+        background: ${darkMode ? 'hsl(0, 0%, 49%)' : 'hsl(0, 0%, 75%)'};
         color: ${colors.titleColor};
 
         &:hover {

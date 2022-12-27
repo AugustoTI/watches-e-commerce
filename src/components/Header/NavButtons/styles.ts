@@ -2,12 +2,13 @@ import styled, { css } from 'styled-components'
 import { minQuery } from '~/styles/query'
 
 export const Container = styled.div`
-  ${() => css`
+  ${({ theme: { colors } }) => css`
     display: flex;
     align-items: center;
     column-gap: 1.6rem;
 
-    ${NavToggleIconContainer}, ${NavShopIconContainer} {
+    ${NavToggleIconContainer}, ${NavShopIconContainer}, svg {
+      color: ${colors.titleColor};
       font-size: 2rem;
       cursor: pointer;
     }
