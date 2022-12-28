@@ -19,7 +19,8 @@
     "paths": {
       "~/components/*": ["src/components/*"],
       "~/templates/*": ["src/templates/*"],
-      "~/styles/*": ["src/styles/*"]
+      "~/styles/*": ["src/styles/*"],
+      "~/stores/*": ["src/stores/*"]
     },
     "noFallthroughCasesInSwitch": false
   },

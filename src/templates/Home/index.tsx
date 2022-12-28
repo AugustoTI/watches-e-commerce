@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { Header } from '~/components/Header'
+import { Main } from '~/components/Main'
 
 export const Home = () => {
   return (
@@ -9,6 +10,9 @@ export const Home = () => {
         <meta name="description" content="Website selling imported watches" />
       </Head>
       <Header />
+      <main className="main">
+        <Main />
+      </main>
     </>
   )
 }

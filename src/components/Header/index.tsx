@@ -1,45 +1,36 @@
-import { BiX, BiGridAlt, BiShoppingBag } from 'react-icons/bi'
-import { BsWatch } from 'react-icons/bs'
 import * as S from './styles'
-import { useState } from 'react'
+import { NavLogo } from './NavLogo'
+import { NavMenu } from './NavMenu'
+import { NavButtons } from './NavButtons'
+import { useEffect, useState } from 'react'
 
 export const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [backgroundActive, setBackgroundActive] = useState(false)
+
+  useEffect(() => {
+    const scrollHeader = () => {
+      if (window.scrollY >= 50) {
+        setBackgroundActive(true)
+      } else {
+        setBackgroundActive(false)
+      }
+    }
+
+    window.addEventListener('scroll', scrollHeader)
+
+    return () => {
+      window.removeEventListener('scroll', scrollHeader)
+    }
+  }, [])
 
   return (
-    <S.Container>
+    <S.Container backgroundActive={backgroundActive}>
       <S.NavBar className="container">
-        <S.NavLogo href={'/'}>
-          <BsWatch />
-          Rolex
-        </S.NavLogo>
-        <S.NavMenu isOpen={isOpen}>
-          <S.NavList>
-            <S.NavItem onClick={() => setIsOpen(false)}>
-              <a href="#home">Home</a>
-            </S.NavItem>
-            <S.NavItem onClick={() => setIsOpen(false)}>
-              <a href="#featured">Featured</a>
-            </S.NavItem>
-            <S.NavItem onClick={() => setIsOpen(false)}>
-              <a href="#products">Products</a>
-            </S.NavItem>
-            <S.NavItem onClick={() => setIsOpen(false)}>
-              <a href="#new">New</a>
-            </S.NavItem>
-          </S.NavList>
-          <button aria-label="Close Menu" onClick={() => setIsOpen(false)}>
-            <BiX />
-          </button>
-        </S.NavMenu>
-        <S.NavButtons>
-          <button aria-label="View Card">
-            <BiShoppingBag />
-          </button>
-          <button aria-label="Open Menu" onClick={() => setIsOpen(true)}>
-            <BiGridAlt />
-          </button>
-        </S.NavButtons>
+        <NavLogo />
+
+        <NavMenu />
+
+        <NavButtons />
       </S.NavBar>
     </S.Container>
   )

@@ -1,6 +1,6 @@
 import { Roboto } from '@next/font/google'
 import { createGlobalStyle, css } from 'styled-components'
-import { minQuery } from './query'
+import { maxQuery, minQuery } from './query'
 
 const robotoFont = Roboto({
   subsets: ['latin'],
@@ -8,13 +8,18 @@ const robotoFont = Roboto({
   display: 'swap',
 })
 
-export const GlobalStyles = createGlobalStyle`
+interface GlobalStylesProps {
+  darkMode: boolean
+}
+
+export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   ${({
     theme: {
       colors,
       spacings,
       font: { sizes },
     },
+    darkMode,
   }) => css`
     * {
       margin: 0;
@@ -41,11 +46,6 @@ export const GlobalStyles = createGlobalStyle`
       transition: 0.4s;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
     button {
       cursor: pointer;
       border: none;
@@ -69,12 +69,36 @@ export const GlobalStyles = createGlobalStyle`
       font-weight: 500;
     }
 
-    /*=============== REUSABLE CSS CLASSES ===============*/
+    ::-webkit-scrollbar {
+      width: 0.96rem;
+      background: ${darkMode ? 'hsl(0, 0%, 30%)' : 'hsl(0, 0%, 74%)'};
+    }
 
+    ::-webkit-scrollbar-thumb {
+      background: hsl(0, 0%, 17%);
+    }
+
+    /*=============== REUSABLE CSS CLASSES ===============*/
     .container {
       max-width: 102.4rem;
       margin-left: ${spacings['2.4']};
       margin-right: ${spacings['2.4']};
+
+      ${maxQuery(
+        320,
+        css`
+          margin-left: ${spacings['1.6']};
+          margin-right: ${spacings['1.6']};
+        `,
+      )}
+
+      ${minQuery(
+        1024,
+        css`
+          margin-left: auto;
+          margin-right: auto;
+        `,
+      )};
     }
 
     .grid {
@@ -96,18 +120,44 @@ export const GlobalStyles = createGlobalStyle`
       text-transform: uppercase;
       letter-spacing: 2px;
       text-align: center;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -1.6rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 67px;
+        height: 1px;
+        background-color: ${colors.firstColor};
+      }
     }
 
-    .section_title::before {
-      content: '';
-      position: absolute;
-      top: -1.6rem;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      width: 67px;
-      height: 1px;
-      background-color: ${colors.firstColor};
+    .button {
+      display: inline-block;
+      padding: 2rem 3.2rem;
+      background: ${colors.buttonColor};
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+
+      &:hover {
+        background: ${colors.buttonColorAlt};
+      }
+
+      &.button-small {
+        padding: 1.6rem 2.4rem;
+      }
+
+      &.button-gray {
+        background: ${darkMode ? 'hsl(0, 0%, 49%)' : 'hsl(0, 0%, 75%)'};
+        color: ${colors.titleColor};
+
+        &:hover {
+          background: hsl(0, 0%, 63%);
+        }
+      }
     }
 
     /*=============== RESPONSIVE TYPOGRAPHY ===============*/
@@ -124,6 +174,6 @@ export const GlobalStyles = createGlobalStyle`
           font-size: ${sizes.desktop.h3FontSize};
         }
       `,
-    )}
+    )};
   `}
 `
