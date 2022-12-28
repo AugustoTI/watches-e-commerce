@@ -1,4 +1,4 @@
-import { useHeaderMenu } from '~/stores/useHeaderMenu'
+import { useHeaderMenu } from '~/stores/headerMenu'
 import { NavItem } from '../NavItem'
 import * as S from './styles'
 

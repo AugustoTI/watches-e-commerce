@@ -1,6 +1,6 @@
 import { BiGridAlt, BiShoppingBag, BiMoon, BiSun } from 'react-icons/bi'
-import { useHeaderMenu } from '~/stores/useHeaderMenu'
-import { useSwitchTheme } from '~/stores/useSwitchTheme'
+import { useHeaderMenu } from '~/stores/headerMenu'
+import { useSwitchTheme } from '~/stores/switchTheme'
 import * as S from './styles'
 
 export const NavButtons = () => {

@@ -1,5 +1,5 @@
 import { BiX } from 'react-icons/bi'
-import { useHeaderMenu } from '~/stores/useHeaderMenu'
+import { useHeaderMenu } from '~/stores/headerMenu'
 import { NavList } from '../NavList'
 import * as S from './styles'
 

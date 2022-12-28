@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
-import { useSwitchTheme } from '~/stores/useSwitchTheme'
+import { useSwitchTheme } from '~/stores/switchTheme'
 import { GlobalStyles } from '~/styles/global'
 import { dark } from '~/styles/themes/dark'
 import { light } from '~/styles/themes/light'
