@@ -1,5 +1,5 @@
 import { Roboto } from '@next/font/google'
-import { createGlobalStyle, css } from 'styled-components'
+import { createGlobalStyle, css, DefaultTheme } from 'styled-components'
 import { maxQuery, minQuery } from './query'
 
 const robotoFont = Roboto({
@@ -8,18 +8,18 @@ const robotoFont = Roboto({
   display: 'swap',
 })
 
-interface GlobalStylesProps {
+interface GlobalStylesProps extends DefaultTheme {
   darkMode: boolean
 }
 
 export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   ${({
+    darkMode,
     theme: {
       colors,
       spacings,
       font: { sizes },
     },
-    darkMode,
   }) => css`
     * {
       margin: 0;
