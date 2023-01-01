@@ -2,7 +2,7 @@ import * as S from './styles'
 
 export const Featured = () => {
   return (
-    <S.Container id="featured" className="container section">
+    <section id="featured" className="container section">
       <h2 className="section_title">Featured</h2>
 
       <S.Content className="grid">
@@ -32,6 +32,6 @@ export const Featured = () => {
           </S.FeaturedCardButton>
         </S.FeaturedCard>
       </S.Content>
-    </S.Container>
+    </section>
   )
 }

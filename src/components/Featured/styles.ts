@@ -1,12 +1,27 @@
 import styled, { css } from 'styled-components'
-
-export const Container = styled.section`
-  ${() => css``}
-`
+import { minQuery } from '~/styles/query'
 
 export const Content = styled.div`
   ${() => css`
     row-gap: 4rem;
+
+    ${minQuery(
+      576,
+      css`
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2.4rem;
+      `,
+    )}
+
+    ${minQuery(
+      992,
+      css`
+        grid-template-columns: repeat(3, 312px);
+        padding-top: 3.2rem;
+      `,
+    )}
   `}
 `
 
@@ -66,6 +81,17 @@ export const FeaturedCardData = styled.div`
       font-size: ${font.sizes.mobile.h3FontSize};
       font-weight: 600;
     }
+
+    ${minQuery(
+      767,
+      css`
+        ${FeaturedCardTitle},
+        ${FeaturedCardPrice} {
+          font-size: ${font.sizes.desktop.normalFontSize};
+          font-weight: 600;
+        }
+      `,
+    )}
   `}
 `
 

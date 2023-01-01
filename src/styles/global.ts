@@ -116,6 +116,13 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
 
     .section {
       padding: 10.4rem 0 1.6rem;
+
+      ${minQuery(
+        767,
+        css`
+          padding: 12.8rem 0 1.6rem;
+        `,
+      )}
     }
 
     .section_title {
