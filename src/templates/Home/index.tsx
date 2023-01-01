@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { Featured } from '~/components/Featured'
 import { Header } from '~/components/Header'
 import { Main } from '~/components/Main'
 
@@ -12,6 +13,7 @@ export const Home = () => {
       <Header />
       <main className="main">
         <Main />
+        <Featured />
       </main>
     </>
   )

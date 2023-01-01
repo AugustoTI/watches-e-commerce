@@ -32,6 +32,11 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
       scroll-behavior: smooth;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     body,
     button,
     input {
